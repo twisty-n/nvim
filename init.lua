@@ -13,21 +13,31 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
 if (vim.api.nvim_eval('has("multi_byte")')) then
-  vim.o.encoding = 'utf-8'
-  vim.g.fileencoding = 'utf-8'
-  vim.g.fileencodings = 'ucs-bom,utf-8,latin1'
+    vim.o.encoding = 'utf-8'
+    vim.g.fileencoding = 'utf-8'
+    vim.g.fileencodings = 'ucs-bom,utf-8,latin1'
 end
 
 vim.o.termguicolors = true
 
+-- When launching neovim with winpty, winpty helpfully makes TERM=vtpcon. This breaks everything
+-- winpty also doesn't support 256 colours. How wonderful.
+local isWinPty = os.getenv("TERM") == "vtpcon"
+
+if isWinPty then
+    vim.api.nvim_exec("colorscheme default", true)
+else
+    vim.api.nvim_exec("colorscheme dracula", true)
+end
+
+
 vim.api.nvim_exec([[
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd filetype text setlocal textwidth=78
-  filetype indent on
-  filetype plugin on
-  autocmd BufRead,BufWritePre *.sh normal gg=G
-  colorscheme dracula
-  setglobal autoindent smartindent
+" For all text files set 'textwidth' to 78 characters.
+autocmd filetype text setlocal textwidth=78
+filetype indent on
+filetype plugin on
+autocmd BufRead,BufWritePre *.sh normal gg=G
+setglobal autoindent smartindent
 ]], true)
 
 vim.o.compatible = false
