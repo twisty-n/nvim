@@ -28,6 +28,7 @@ require "paq" {
     { 'tpope/vim-surround' };
     { 'tpope/vim-fugitive' };
     { 'preservim/nerdtree' };
+    { 'Raimondi/delimitMate' };
 }
 
 -- Configure Lualine
