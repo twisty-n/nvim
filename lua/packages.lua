@@ -36,6 +36,8 @@ require "paq" {
 -- see https://stackoverflow.com/questions/66457232/windows-terminal-powershell-some-glyph-icons-are-not-rendering-when-using-cascad
 require('lualine').setup { options = { theme = dracula } }
 
+require('telescope_config')
+
 -- Treesitter Things
 local ts = require 'nvim-treesitter.configs'
 ts.setup {
