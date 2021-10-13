@@ -27,6 +27,7 @@ require "paq" {
     -- Utilities
     { 'tpope/vim-surround' };
     { 'tpope/vim-fugitive' };
+    { 'preservim/nerdtree' };
 }
 
 -- Configure Lualine
