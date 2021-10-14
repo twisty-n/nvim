@@ -13,6 +13,7 @@ require "paq" {
     { 'nvim-lua/popup.nvim', as='popup' };
     { 'nvim-lua/plenary.nvim', as='plenary'};
     { 'nvim-telescope/telescope.nvim', as='telescope' };
+    { 'easymotion/vim-easymotion' };
 
     -- Cosmetics
     { 'dracula/vim', as='dracula' };
@@ -30,6 +31,10 @@ require "paq" {
     { 'preservim/nerdtree' };
     { 'Raimondi/delimitMate' };
     { 'tpope/vim-eunuch' };
+
+    -- LSP
+--    { "neovim/nvim-lspconfig" }; 
+--    { "kabouzeid/nvim-lspinstall" }; 
 }
 
 -- Configure Lualine
@@ -39,6 +44,7 @@ require "paq" {
 require('lualine').setup { options = { theme = dracula } }
 
 require('telescope_config')
+--require('lsp')
 
 -- Treesitter Things
 local ts = require 'nvim-treesitter.configs'
