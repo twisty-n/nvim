@@ -29,6 +29,7 @@ require "paq" {
     { 'tpope/vim-fugitive' };
     { 'preservim/nerdtree' };
     { 'Raimondi/delimitMate' };
+    { 'tpope/vim-eunuch' };
 }
 
 -- Configure Lualine

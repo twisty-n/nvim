@@ -12,6 +12,8 @@ vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
+vim.o.cursorline = true
+
 if (vim.api.nvim_eval('has("multi_byte")')) then
     vim.o.encoding = 'utf-8'
     vim.g.fileencoding = 'utf-8'
@@ -34,6 +36,7 @@ end
 vim.api.nvim_exec([[
 " For all text files set 'textwidth' to 78 characters.
 autocmd filetype text setlocal textwidth=78
+set wildmode=list:longest,list:full
 filetype indent on
 filetype plugin on
 autocmd BufRead,BufWritePre *.sh normal gg=G
